@@ -1,10 +1,9 @@
-FROM node:18 as base
+FROM node:alpine as base
 
 # Create app directory
 WORKDIR /usr/src/app
 
 COPY package*.json ./
-
 
 FROM base as build
 
@@ -15,9 +14,7 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-
 FROM build as prod
-
 
 ENV NODE_ENV=production
 
@@ -25,4 +22,8 @@ ENV NODE_ENV=production
 RUN npm prune
 
 EXPOSE 3000
+
+RUN chown -R node:node /usr/src/app
+USER node
+
 CMD [ "node", "dist/index.js" ]
