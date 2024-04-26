@@ -64,7 +64,7 @@ kubectl apply -f kube/deployment.yaml -f kube/hpa.yaml -f kube/ingress.yaml -f k
 
 There are multiple methods to watch the cluster while load testing. We can look at the logs or at the HPA events by running `kubectl describe hpa`. Another way using a GUI is to use a tool called [k9s](https://k9scli.io/), with which we can visually see new pods getting created, or old ones be destroyed. Simply run `k9s`.
 
-For load testing we can use an open source simple tool called [hey](https://github.com/rakyll/hey).
+For load testing we can use an open source tool called [hey](https://github.com/rakyll/hey).
 
 ```bash
 brew install hey
