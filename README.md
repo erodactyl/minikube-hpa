@@ -76,4 +76,6 @@ Run:
 hey http://helloworld.local/expensive
 ```
 
-The route `/expensive` calculates the fibonacci of 35, which is a CPU-intensive operation. Every 15 seconds the metrics-server reports the CPU of the running pods, and the HPA uses that to calculate the new desired number of pods. After the requests end, there is 1 minute of "stabilization window". After this, if downscaling is still required according to the HPA, the unneded pods will go down.
+The route `/expensive` calculates the fibonacci of 35, which is a CPU-intensive operation. With the setup of the `kube/deployment`, the autoscaling works but still isn't able to handle all 200 requests. This can easily be fixed in a production environment by giving more resources to the pods. In this particular case, every pod has a limit of 0.2 CPUs. As the default Minikube setup has access to 2 CPUs, this is the maximum we can have for 10 pods.
+
+Every 15 seconds the metrics-server reports the CPU of the running pods, and the HPA uses that to calculate the new desired number of pods. After the requests end, there is 1 minute of "stabilization window". After this, if downscaling is still required according to the HPA, the unneded pods will go down.
