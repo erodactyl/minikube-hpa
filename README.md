@@ -1,6 +1,6 @@
 # Minimal local Kubernetes setup
 
-The implementation of this task was done on a MacOS using a local Kubernetes tool called Minikube. Minikube runs inside a Docker container on a local machine. To install Minikube on MacOS, follow [this guide](https://minikube.sigs.k8s.io/docs/start/).
+This documentation assumes you are using a local Kubernetes tool called Minikube. Minikube runs inside a Docker container on a local machine. To install Minikube on MacOS, follow [this guide](https://minikube.sigs.k8s.io/docs/start/).
 
 Make sure to also have Docker installed and running on your machine, and the kubectl command-line tool configured to communicate with your cluster.
 
