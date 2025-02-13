@@ -2,6 +2,12 @@
 
 This documentation assumes you are using a local Kubernetes tool called Minikube. Minikube runs inside a Docker container on a local machine. To install Minikube on MacOS, follow [this guide](https://minikube.sigs.k8s.io/docs/start/).
 
+## Easy method
+
+Simply run `./start.sh` and it will configure everything on your local machine.
+
+## Manual method
+
 Make sure to also have Docker installed and running on your machine, and the kubectl command-line tool configured to communicate with your cluster.
 
 To run the Horizontal Pod Autoscaling test we need to create the cluster.
